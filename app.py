@@ -388,7 +388,7 @@ with st.sidebar:
 
     st.divider()
     auto_train = st.checkbox("Auto-train on change", value=False)
-    train_clicked = st.button("🚀 Train / Re-train")
+    train_clicked = st.button("Train / Re-train")
 
 
 # Data generation
