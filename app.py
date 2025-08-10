@@ -331,7 +331,7 @@ def make_loss_plot(history: Dict) -> go.Figure:
 # Streamlit UI
 # -----------------------
 st.set_page_config(page_title="1D Function Fitter (PyTorch)", layout="wide")
-st.title("🔧 1D Random Function → Neural Network Fitter")
+st.title("1D Random Function → Neural Network Model")
 st.write(
     "Generate synthetic 1D data from a chosen function, then fit a PyTorch MLP. "
     "Tweak layers, activations, optimizer, and training settings; view predictions and metrics."
