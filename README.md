@@ -6,10 +6,10 @@ Personal hobby project. I built a small interactive app to generate 1D synthetic
 > This repo is not accepting pull requests or feature requests. Issues are also closed. Feel free to fork and adapt.
 
 ## Live demo
-Add your Streamlit Cloud URL here once deployed:
+Streamlit Cloud URL :
 
 ```
-https://<your-username>-nn-1d-fitter-streamlit-app.streamlit.app
+[https://interactive-neural-networks-4ebqj64cayfva22bihh272.streamlit.app/]
 ```
 
 ## Quickstart
