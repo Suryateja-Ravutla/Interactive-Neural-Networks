@@ -1,0 +1,29 @@
+name: Auto-close Issues
+
+on:
+  issues:
+    types: [opened, edited, reopened]
+
+jobs:
+  close:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+      - uses: actions/github-script@v7
+        with:
+          script: |
+            const issue = context.payload.issue;
+            const msg = `Thanks for reaching out! This is a personal hobby project and issues are not tracked here. This issue will be closed.`;
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: issue.number,
+              body: msg
+            });
+            await github.rest.issues.update({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: issue.number,
+              state: "closed"
+            });

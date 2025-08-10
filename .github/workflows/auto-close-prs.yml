@@ -1,0 +1,30 @@
+name: Auto-close PRs
+
+on:
+  pull_request_target:
+    types: [opened, reopened, edited, ready_for_review]
+
+jobs:
+  close:
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+      issues: write
+    steps:
+      - uses: actions/github-script@v7
+        with:
+          script: |
+            const pr = context.payload.pull_request;
+            const msg = `Thanks for your interest! This is a personal hobby project and does not accept pull requests. This PR will be closed.`;
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: pr.number,
+              body: msg
+            });
+            await github.rest.pulls.update({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: pr.number,
+              state: "closed"
+            });
