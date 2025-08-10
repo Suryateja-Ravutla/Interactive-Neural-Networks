@@ -9,7 +9,7 @@ Personal hobby project. I built a small interactive app to generate 1D synthetic
 Streamlit Cloud URL :
 
 ```
-[https://interactive-neural-networks-4ebqj64cayfva22bihh272.streamlit.app/]
+https://interactive-neural-networks-4ebqj64cayfva22bihh272.streamlit.app/
 ```
 
 ## Quickstart
