@@ -14,6 +14,11 @@ from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
 import streamlit as st
 import plotly.graph_objects as go
 
+q = st.query_params
+if q.get("ping", ["0"])[0] == "1":
+    st.write("OK")
+    st.stop()
+    
 
 # -----------------------
 # Utility helpers
